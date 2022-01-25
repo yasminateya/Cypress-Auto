@@ -21,7 +21,7 @@ npm install cypress --save-dev
 ```bash
 npx cypress open
 ```
-8. Use this command if you want to run it in a headless mode
+8. Use this command if you want to run cases in a headless mode
 ```bash
 npx cypress run
 ```
