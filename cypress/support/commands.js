@@ -46,3 +46,35 @@ Cypress.Commands.add('loginToApplication', () => {
         })
     
 })
+
+//open Forms /Form Layouts page
+Cypress.Commands.add('openFormLayoutsPage', () => {
+    cy.visit('/')
+    cy.contains('Forms').click()
+    cy.contains('Form Layouts').click()
+    cy.url().should('include', 'forms/layouts')
+})
+
+//open Forms /Datepicker page
+Cypress.Commands.add('openDatePickerPage', () => {
+    cy.visit('/')
+    cy.contains('Forms').click()
+    cy.contains('Datepicker').click()
+    cy.url().should('include', 'forms/datepicker')
+})
+
+//open Modal & Overlays /Toastr page
+Cypress.Commands.add('openToastrPage', () => {
+    cy.visit('/')
+    cy.contains('Modal & Overlays').click()
+    cy.contains('Toastr').click()
+    cy.url().should('include', 'modal-overlays/toastr')
+})
+
+//open Tables & Data /Smart table page
+Cypress.Commands.add('openSmartTablePage', () => {
+    cy.visit('/')
+    cy.contains('Tables & Data').click()
+    cy.contains('Smart Table').click()
+    cy.url().should('include', 'tables/smart-table')
+})
