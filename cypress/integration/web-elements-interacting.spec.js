@@ -235,6 +235,26 @@ describe('Section 3: web elements', () => {
 
     })
 
+    /********************** 16. PopUps and Tooltips ***********************/
+    it('9. check text of tooltip is correct', () =>{
+        cy.openTooltipPage()
+        cy.contains('nb-card', 'Colored Tooltips')
+            .contains('Default').click()
+
+        cy.get('nb-tooltip').should('contain', 'This is a tooltip')
+    })
+
+    //there are 2 types of dialogues: 1. browser (alert ) dialog  2. normal dialog
+    it.only('10. check text of browser dialog is correct', () => {
+        cy.openSmartTablePage()
+        const stub = cy.stub()
+        cy.on('window:confirm', stub)
+        cy.get('tbody tr').first().find('.nb-trash').click().then(()=>{
+            expect(stub.getCall(0)).to.be.calledWith('Are you sure you want to delete?')
+        })
+       
+    })
+
 })
 
 
