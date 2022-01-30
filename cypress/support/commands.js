@@ -71,6 +71,14 @@ Cypress.Commands.add('openToastrPage', () => {
     cy.url().should('include', 'modal-overlays/toastr')
 })
 
+//open Modal & Overlays /Tooltip page
+Cypress.Commands.add('openTooltipPage', () => {
+    cy.visit('/')
+    cy.contains('Modal & Overlays').click()
+    cy.contains('Tooltip').click()
+    cy.url().should('include', 'modal-overlays/tooltip')
+})
+
 //open Tables & Data /Smart table page
 Cypress.Commands.add('openSmartTablePage', () => {
     cy.visit('/')
