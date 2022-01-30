@@ -47,9 +47,14 @@ Cypress.Commands.add('loginToApplication', () => {
     
 })
 
+//open Home page
+Cypress.Commands.add('openHomePage', () => {
+    cy.visit('/')
+})
+
 //open Forms /Form Layouts page
 Cypress.Commands.add('openFormLayoutsPage', () => {
-    cy.visit('/')
+    openHomePage()
     cy.contains('Forms').click()
     cy.contains('Form Layouts').click()
     cy.url().should('include', 'forms/layouts')
@@ -57,7 +62,7 @@ Cypress.Commands.add('openFormLayoutsPage', () => {
 
 //open Forms /Datepicker page
 Cypress.Commands.add('openDatePickerPage', () => {
-    cy.visit('/')
+    openHomePage()
     cy.contains('Forms').click()
     cy.contains('Datepicker').click()
     cy.url().should('include', 'forms/datepicker')
@@ -65,7 +70,7 @@ Cypress.Commands.add('openDatePickerPage', () => {
 
 //open Modal & Overlays /Toastr page
 Cypress.Commands.add('openToastrPage', () => {
-    cy.visit('/')
+    openHomePage()
     cy.contains('Modal & Overlays').click()
     cy.contains('Toastr').click()
     cy.url().should('include', 'modal-overlays/toastr')
@@ -73,7 +78,7 @@ Cypress.Commands.add('openToastrPage', () => {
 
 //open Modal & Overlays /Tooltip page
 Cypress.Commands.add('openTooltipPage', () => {
-    cy.visit('/')
+    openHomePage()
     cy.contains('Modal & Overlays').click()
     cy.contains('Tooltip').click()
     cy.url().should('include', 'modal-overlays/tooltip')
@@ -81,7 +86,7 @@ Cypress.Commands.add('openTooltipPage', () => {
 
 //open Tables & Data /Smart table page
 Cypress.Commands.add('openSmartTablePage', () => {
-    cy.visit('/')
+    openHomePage()
     cy.contains('Tables & Data').click()
     cy.contains('Smart Table').click()
     cy.url().should('include', 'tables/smart-table')
