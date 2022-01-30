@@ -77,15 +77,15 @@ describe('Section 3: web elements', () => {
         //get current date and month (short month DEC with toLocaleDateString())
         let date = new Date()
         date.setDate(date.getDate() + 1)
-        let nextDate =  date.getDate()
+        let nextDate = date.getDate()
         console.log(nextDate)
-        let currentMonth = date.toLocaleDateString('default', {month: 'short'})
+        let currentMonth = date.toLocaleDateString('default', { month: 'short' })
 
         cy.contains('nb-card', 'Common Datepicker').find('input').then(input => {
             cy.wrap(input).click()
 
             cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then(actualDate => {
-                if (!actualDate.includes(currentMonth)){
+                if (!actualDate.includes(currentMonth)) {
                     cy.get('[data-name="chevron-right"]').click()
                     cy.get('nb-calendar-day-picker [class="day-cell ng-star-inserted"]').contains(nextDate).click()
                 } else {
@@ -235,8 +235,8 @@ describe('Section 3: web elements', () => {
 
     })
 
-    /********************** 16. PopUps and Tooltips ***********************/
-    it('9. check text of tooltip is correct', () =>{
+    /********************** 18. PopUps and Tooltips ***********************/
+    it('9. check text of tooltip is correct', () => {
         cy.openTooltipPage()
         cy.contains('nb-card', 'Colored Tooltips')
             .contains('Default').click()
@@ -249,10 +249,9 @@ describe('Section 3: web elements', () => {
         cy.openSmartTablePage()
         const stub = cy.stub()
         cy.on('window:confirm', stub)
-        cy.get('tbody tr').first().find('.nb-trash').click().then(()=>{
+        cy.get('tbody tr').first().find('.nb-trash').click().then(() => {
             expect(stub.getCall(0)).to.be.calledWith('Are you sure you want to delete?')
         })
-       
     })
 
 })
