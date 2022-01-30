@@ -245,7 +245,7 @@ describe('Section 3: web elements', () => {
     })
 
     //there are 2 types of dialogues: 1. browser (alert ) dialog  2. normal dialog
-    it.only('10. check text of browser dialog is correct', () => {
+    it('10. check text of browser dialog is correct', () => {
         cy.openSmartTablePage()
         const stub = cy.stub()
         cy.on('window:confirm', stub)
