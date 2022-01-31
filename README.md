@@ -2,7 +2,9 @@
 This repo for automating local website [ngx-admin] using JavaScript and Cypress
 
 ### How to run:
-1. Install application under test from this repo [ngx-admin](https://github.com/Postavshik/ngx-cypress-test)  
+1. Instal AUT (Application Under Test)
+- Clone AUT for [UI-testing] from this repo [ngx-admin](https://github.com/Postavshik/ngx-cypress-test)  
+- Clone AUT for [API-testing] from this repo [Conduit](https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app)  
 2. Open the project 
 3. Run from the terminal 
 ```bash
